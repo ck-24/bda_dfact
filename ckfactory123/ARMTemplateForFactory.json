@@ -51,6 +51,48 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/ckBlobStorage')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/orders')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ckBlobStorage",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "orders"
+					}
+				},
+				"schema": {
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "string"
+						},
+						"date": {
+							"type": "string"
+						},
+						"value": {
+							"type": "string"
+						},
+						"customer_id": {
+							"type": "string"
+						},
+						"product_id": {
+							"type": "string"
+						}
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/ckBlobStorage')]"
+			]
 		}
 	]
 }
