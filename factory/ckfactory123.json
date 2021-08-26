@@ -1,0 +1,9 @@
+{
+	"name": "ckfactory123",
+	"location": "uksouth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "84b02e03-9f62-4297-a03b-cfe30c3a0b64",
+		"tenantId": "0fd78a89-8a75-47e9-959a-f183656b3cb0"
+	}
+}
